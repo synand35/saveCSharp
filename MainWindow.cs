@@ -1,17 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using System.Drawing.Drawing2D;
-
-
-
 
 namespace GestionRendezVous
 {
@@ -19,110 +11,141 @@ namespace GestionRendezVous
     {
         protected DatabaseConnection connection;
         private Button selectedButtonPage;
-        private MySqlCommand cmd;
-        Form1 frm1;
-        Form2 frm2;
         public MainWindow()
         {
             InitializeComponent();
-            connection = new DatabaseConnection("localhost", "rdvcomptable", "root", "");
-
-            ListeRendezVous();
-            //if (Liste.ColumnCount == 0) {
-            //}
-            //else
-            //{
-
-            //Liste.Columns[0].Width = 50;
-            //Liste.Columns[1].Width = 80;
-            //Liste.Columns[2].Width = 120;
-            //Liste.Columns[3].Width = 100;
-            //Liste.Columns[4].Width = 100;
-            //Liste.Columns[5].Width = 60;
-            //}
-
-            SetPanelBorderRadius(panel4, 5);
-            AddPanelBorderShadow(panel4, Color.Gray, 2);
-            AddPanelShadow(panel4);
-
-            RoundedTextBox textBox = new RoundedTextBox();
-            textBox.CornerRadius = 10;
-            textBox.BorderColor = Color.Red;
-            textBox.BorderWidth = 2;
-
-            Liste.CellContentDoubleClick += Liste_CellClick;
-        }
-
-        private void Liste_CellClick(object sender, DataGridViewCellEventArgs e) {
-
-            if (e.ColumnIndex ==7 && e.RowIndex >= 0) // buttonColumnIndex est l'index de la colonne de boutons
-            {
-                // Exemple : Afficher un message avec l'index de la 
-                DataGridViewRow selectedRow = Liste.Rows[e.RowIndex];
-                // Accéder aux valeurs des cellules de la ligne sélectionnée
-                string NumeroRdv = selectedRow.Cells["N°"].Value.ToString();
-                DialogResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer  le rendez vous  numero "+ NumeroRdv + "?", "Confimation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {            
-                    supprimer(NumeroRdv);
-                    Liste.Refresh();
-                    MessageBox.Show("Le rendez-vous Numero" + NumeroRdv + "a été supprmier");
-                }
-                else if (result == DialogResult.No)
-                {
-                    MessageBox.Show("La suppression a été annulée");
-                }
-
-            }
-            if (e.ColumnIndex ==6 && e.RowIndex >= 0) // buttonColumnIndex est l'index de la colonne de boutons
-            {
-                // Exemple : Afficher un message avec l'index de la 
-                DataGridViewRow selectedRow = Liste.Rows[e.RowIndex];
-                // Accéder aux valeurs des cellules de la ligne sélectionnée
-                string NumeroRdv = selectedRow.Cells["N°"].Value.ToString();
-                string NumCli = selectedRow.Cells["N°_client"].Value.ToString();
-                string NumCompt = selectedRow.Cells["N°_Comptable"].Value.ToString();
-                DateTime Date =(DateTime) selectedRow.Cells["Date"].Value;
-                string Heure = selectedRow.Cells["Heure"].Value.ToString();
-                
-                DialogResult result = MessageBox.Show("Êtes-vous sûr de vouloir modifier  le rendez vous  numero " + NumeroRdv + "?", "Confimation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    Form2.SetId(NumeroRdv, NumCli, NumCompt, Date, Heure);
-                    frm2 = new Form2();
-                   
-                   frm2.ShowDialog();
-                }
-                else if (result == DialogResult.No)
-                {
-                    MessageBox.Show("La modificaion a été annulée");
-                }
-            }
-        }
-
-        public static  void ListeRendezVous()
-        {
-            String querryListeREndezvous ="Select rdv_id as N°,client_id as N°_client,comptable_id as N°_Comptable,date as Date,heure as Heure, satut as Statu from rendezvous order by date ASC";
-           MainWindow.Liste.DataSource = DatabaseConnection.StaticRecupererDonnees(querryListeREndezvous);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // STYLE DE PANEL DE FILTRE
+            SetupRadius(10);
+            setShadowBorder(panel5, 10);
+            //end Style
             // initialisation de la base de donnée 
             connection = new DatabaseConnection("localhost", "rdvcomptable", "root", "");
-
-        }
-            // initiation des donnée dans la table 
-
-        // methode de get pour  tout les donnée
-        private List<Dictionary<string, object>> GetAllMyAppoints()
-        {
+            // get all data from the database in a datagridView
             connection.OpenConnection();
-            Dictionary<string, object> result = new Dictionary<string,object>();
-            // recuperer tout les donnée
-            List<Dictionary<string, object>> resultats = connection.ExecuteSelectQuery("clients");
+            List<Dictionary<string, object>> results = GetAllMyAppoints();
+            // afficher dans le tableau 
+            setDataTableAppoints(results);
+
 
             connection.CloseConnection();
+        }
+
+        private void ToogleRowTabColor()
+        {
+            for (int x = 0; x < DataTableAppoints.RowCount; x++)
+            {
+                if (x % 2 == 0)
+                {
+                    DataTableAppoints.Rows[x].DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#C8E3D2");
+                }
+                else
+                {
+                    DataTableAppoints.Rows[x].DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#A2D6E1");
+                }
+            }
+        }
+        private void setDataTableAppoints(List<Dictionary<string, object>> result)
+        {
+            DataTableAppoints.Columns.Clear();
+
+            // Créer les colonnes en fonction des clés des dictionnaires
+            foreach (string key in result[0].Keys)
+            {
+                DataTableAppoints.Columns.Add(key, key); // Nom de la colonne et en-tête de la colonne
+            }
+            foreach (Dictionary<string, object> so in result)
+            {
+                // formatage de la dates et de  l'heures 
+                DateTime dates = (DateTime)so["dates"];
+                so["dates"] = dates.ToString("dd-MMM -yyy");
+            }
+
+            foreach (Dictionary<string, object> dictionary in result)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                foreach (KeyValuePair<string, object> kvp in dictionary)
+                {
+
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    cell.Value = kvp.Value;
+                    row.Cells.Add(cell);
+                }
+                DataTableAppoints.Rows.Add(row);
+                ToogleRowTabColor();
+            }
+        }
+
+        /**
+         * Afficher dans la console une List<Dictionary<string,object>>
+         */
+        private void ConsoleDebugList(List<Dictionary<string, object>> results)
+        {
+            // Affiche les résultats dans la console
+            foreach (Dictionary<string, object> result in results)
+            {
+                foreach (KeyValuePair<string, object> kvp in result)
+                {
+                    string columnName = kvp.Key;
+                    object columnValue = kvp.Value;
+                    Console.WriteLine($"{columnName}: {columnValue}");
+                }
+                Console.WriteLine(">----------------------<");
+            }
+
+        }
+
+        private void SetupRadius(int borderRadius)
+        {
+            // Définissez la valeur du rayon du coin arrondi
+            int rectangleWidth = panel5.Width; // Utilisez la largeur actuelle du contrôle Panel
+            int rectangleHeight = panel5.Height; // Utilisez la hauteur actuelle du contrôle Panel
+
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90); // Coin supérieur gauche
+            path.AddArc(rectangleWidth - borderRadius, 0, borderRadius, borderRadius, 270, 90); // Coin supérieur droit
+            path.AddArc(rectangleWidth - borderRadius, rectangleHeight - borderRadius, borderRadius, borderRadius, 0, 90); // Coin inférieur droit
+            path.AddArc(0, rectangleHeight - borderRadius, borderRadius, borderRadius, 90, 90); // Coin inférieur gauche
+            path.CloseAllFigures();
+
+            panel5.Region = new System.Drawing.Region(path);
+        }
+
+
+        /* methode de get pour  tout les donnée*/
+        private List<Dictionary<string, object>> GetAllMyAppoints()
+        {
+            List<Dictionary<string, object>> resultats = new List<Dictionary<string, object>>();
+            string AllDataSqlQuery = "SELECT clients.nom AS client ,comptables.nom AS comptable,rendezvous.date AS dates , rendezvous.heure AS heures , rendezvous.statut AS Descriptions"
+                                    + " FROM clients"
+                                    + " INNER JOIN rendezvous"
+                                    + " ON clients.client_id = rendezvous.client_id"
+                                    + " INNER JOIN comptables"
+                                    + " ON comptables.comptable_id = rendezvous.comptable_id";
+
+            using (MySqlCommand cmd = new MySqlCommand(AllDataSqlQuery, connection.GetConnection()))
+            {
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    // creer une Dictonary vide  
+                    while (reader.Read())
+                    {
+                        Dictionary<string, object> rows = new Dictionary<string, object>();
+                        // ajout des donner dans la liste 
+                        for (int x = 0; x < reader.FieldCount; x++)
+                        {
+                            string ColName = reader.GetName(x);
+                            object Values = reader.GetValue(x);
+                            rows[ColName] = Values;
+                        }
+                        // recuperation dans chaque liste de toute les donner  de chaque lignes 
+                        resultats.Add(rows);
+                    }
+                }
+            }
             return resultats;
         }
 
@@ -132,6 +155,7 @@ namespace GestionRendezVous
             TabController.SelectedTab = TabController.TabPages["TakeMeetingPage"];
             ChangeButtonBackGround(sender);
         }
+
         private void ChangeButtonBackGround(object sender)
         {
             Button clickedButton = (Button)sender;
@@ -146,6 +170,10 @@ namespace GestionRendezVous
             clickedButton.ForeColor = Color.WhiteSmoke;
             selectedButtonPage = clickedButton;
         }
+        public static void afficherChild()
+        {
+            Console.WriteLine("test affichage depuis le Main");
+        }
 
         private void MyAppointBtn_Click(object sender, EventArgs e)
         {
@@ -158,116 +186,231 @@ namespace GestionRendezVous
             TabController.SelectedTab = TabController.TabPages["ClientPage"];
             ChangeButtonBackGround(sender);
         }
-        private void Afficherclient()
+
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
+
+
+        // Recherche dans les programmes du comptable
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            List<Dictionary<string, object>> results = new List<Dictionary<string, object>>();
+            // RECHERCHE PAR LE NUMERO DU RENDEZVOUS
+            string rdv_id = TextBoxSearch.Text;
+            int rdv_int;
+            bool success = int.TryParse(rdv_id, out rdv_int); // Conversion en entier
+
             connection.OpenConnection();
 
-            MySqlCommand comand = new MySqlCommand("SELECT * FROM clients",connection.GetConnection());
-            List<Dictionary<string, object>> results = new List<Dictionary<string, object>>();
-            using (MySqlDataReader reader = comand.ExecuteReader())
+            if (success)
             {
-                while (reader.Read())
+                // Conversion réussie, la valeur entière est disponible dans la variable 'number'
+                string sqlSearchQuery = "SELECT clients.nom AS client ,comptables.nom AS comptable,rendezvous.date AS dates , rendezvous.heure AS heures , rendezvous.statut AS Descriptions"
+                        + " FROM clients"
+                        + " INNER JOIN rendezvous"
+                        + " ON clients.client_id = rendezvous.client_id"
+                        + " INNER JOIN comptables"
+                        + " ON comptables.comptable_id = rendezvous.comptable_id"
+                        + $" WHERE rendezvous.rdv_id ='{rdv_id}'";
+                using (MySqlCommand cmd = new MySqlCommand(sqlSearchQuery, connection.GetConnection()))
                 {
-                    Dictionary<string, object> row = new Dictionary<string, object>();
-
-                    for (int i = 0; i < reader.FieldCount; i++)
+                    using (MySqlDataReader rd = cmd.ExecuteReader())
                     {
-                        string columnName = reader.GetName(i);
-                        object value = reader.GetValue(i);
-
-                        row[columnName] = value;
+                        while (rd.Read())
+                        {
+                            Dictionary<string, object> rows = new Dictionary<string, object>();
+                            for (int x = 0; x < rd.FieldCount; x++)
+                            {
+                                string OBjectKey = rd.GetName(x);
+                                object OBjectValue = rd.GetValue(x);
+                                rows[OBjectKey] = OBjectValue;
+                            }
+                            results.Add(rows);
+                        }
                     }
-
-                    results.Add(row);
                 }
-                ClientData.DataSource = results;
-            }
-
-
-            connection.CloseConnection();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frm1 = new Form1();
-            frm1.ShowDialog();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if(Search.Text.Length>0)
-            {
-                String Recherche = "Select rdv_id as Numero,client_id as Num_du_client,comptable_id as Num_du_Comptable,date as Date,heure as Heure, satut as Statu from rendezvous where rdv_id like'%"+Search.Text +"%'";
-                Liste.DataSource = connection.RecupererDonnees(Recherche);
-
- 
             }
             else
             {
-                ListeRendezVous();
+                // recherche par nom 
+                string ClientName = TextBoxSearch.Text;
+                Console.WriteLine("on a ajouter une chaine de caractere : ", ClientName);
+                string sqlQuery = "SELECT clients.nom AS client ,comptables.nom AS comptable,rendezvous.date AS dates , rendezvous.heure AS heures , rendezvous.statut AS Descriptions"
+                        + " FROM clients"
+                        + " INNER JOIN rendezvous"
+                        + " ON clients.client_id = rendezvous.client_id"
+                        + " INNER JOIN comptables"
+                        + " ON comptables.comptable_id = rendezvous.comptable_id"
+                        + " WHERE clients.nom LIKE @clientName";
+                using (MySqlCommand cmd = new MySqlCommand(sqlQuery, connection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@clientName", ClientName + "%");
+                    using (MySqlDataReader rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            Dictionary<string, object> rows = new Dictionary<string, object>();
+                            for (int x = 0; x < rd.FieldCount; x++)
+                            {
+                                string ObjectKey = rd.GetName(x);
+                                object Values = rd.GetValue(x);
+                                rows[ObjectKey] = Values;
+                            }
+                            results.Add(rows);
+                        }
+                    }
+                }
+            }
+            connection.CloseConnection();
+            // gestion de resulat du recherche 
+            if (results.Count == 0)
+            {
+                MessageResult MR = new MessageResult();
+                MR.ShowDialog();
+            }
+            else
+            {
+                setDataTableAppoints(results);
             }
         }
-        private void SetPanelBorderRadius(Panel panel, int radius)
+
+        private void comboBoxDay_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            Rectangle bounds = new Rectangle(0, 0, panel.Width, panel.Height);
-            int diameter = radius * 2;
-
-            // Créer le chemin graphique avec des coins arrondis
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
-            path.AddArc(bounds.Right - diameter, bounds.Y, diameter, diameter, 270, 90);
-            path.AddArc(bounds.Right - diameter, bounds.Bottom - diameter, diameter, diameter, 0, 90);
-            path.AddArc(bounds.X, bounds.Bottom - diameter, diameter, diameter, 90, 90);
-            path.CloseAllFigures();
-
-            // Appliquer le chemin graphique au panel
-            panel.Region = new Region(path);
+            List<Dictionary<string, object>> resultat = new List<Dictionary<string, object>>();
+            string DaySelected = comboBoxDay.Text;
+            Console.WriteLine($"Selected Data table : {DaySelected}");
+            // selection pt jours 
+            string SqlQuery = "SELECT clients.nom AS client ,comptables.nom AS comptable,rendezvous.date AS dates , rendezvous.heure AS heures , rendezvous.statut AS Descriptions"
+                        + " FROM clients"
+                        + " INNER JOIN rendezvous"
+                        + " ON clients.client_id = rendezvous.client_id"
+                        + " INNER JOIN comptables"
+                        + " ON comptables.comptable_id = rendezvous.comptable_id"
+                        + " WHERE DAYNAME(rendezvous.date) LIKE @day";
+            connection.OpenConnection();
+            using (MySqlCommand cmd = new MySqlCommand(SqlQuery, connection.GetConnection()))
+            {
+                cmd.Parameters.AddWithValue("@day", DaySelected);
+                using (MySqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        Dictionary<string, object> result = new Dictionary<string, object>();
+                        for (int x = 0; x < rd.FieldCount; x++)
+                        {
+                            string ObjectKey = rd.GetName(x);
+                            object Value = rd.GetValue(x);
+                            result[ObjectKey] = Value;
+                        }
+                        resultat.Add(result);
+                    }
+                }
+            }
+            connection.CloseConnection();
+            // traitement des resultat du recherche 
+            if (resultat.Count == 0)
+            {
+                MessageResult MR = new MessageResult();
+                MR.ShowDialog();
+            }
+            else
+            {
+                setDataTableAppoints(resultat);
+            }
         }
-        private void AddPanelBorderShadow(Panel panel, Color shadowColor, int shadowSize)
+
+        private void comboBoxEver_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            // filter avee le jours 
+            string DaySelected = comboBoxDay.Text;
+            string daydescription = comboBoxEver.Text;
+            List<Dictionary<string, object>> resultat = new List<Dictionary<string, object>>();
+            Console.WriteLine($"Selected Data table : {DaySelected}");
+            // selection pt jours 
+            string SqlQuery = "SELECT clients.nom AS client ,comptables.nom AS comptable,rendezvous.date AS dates , rendezvous.heure AS heures , rendezvous.statut AS Descriptions"
+                        + " FROM clients"
+                        + " INNER JOIN rendezvous"
+                        + " ON clients.client_id = rendezvous.client_id"
+                        + " INNER JOIN comptables"
+                        + " ON comptables.comptable_id = rendezvous.comptable_id"
+                        + $" WHERE DAYNAME(rendezvous.date) LIKE '{DaySelected}' AND";
+
+            // filter par matin ou midi ou soir      
+            switch (daydescription)
+            {
+                case "Morning":
+                    SqlQuery += " TIME(rendezvous.heure) BETWEEN '00:00:00' AND '11:59:59'";
+                    break;
+                case "Afternoon":
+                    SqlQuery += " TIME(rendezvous.heure) BETWEEN '12:00:00' AND '17:59:59'";
+                    break;
+                case "Evening":
+                    SqlQuery += " TIME(rendezvous.heure) BETWEEN '18:00:00' AND '23:59:59'";
+                    break;
+                default:
+                    break;
+            }
+            Console.WriteLine(SqlQuery);
+
+            connection.OpenConnection();
+            using (MySqlCommand cmd = new MySqlCommand(SqlQuery, connection.GetConnection()))
+            {
+                using (MySqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        Dictionary<string, object> result = new Dictionary<string, object>();
+                        for (int x = 0; x < rd.FieldCount; x++)
+                        {
+                            string ObjectKey = rd.GetName(x);
+                            object Value = rd.GetValue(x);
+                            result[ObjectKey] = Value;
+                        }
+                        resultat.Add(result);
+                    }
+                }
+            }
+            connection.CloseConnection();
+            // 
+            if (resultat.Count == 0)
+            {
+                comboBoxEver.SelectedText = "";
+                MessageResult MR = new MessageResult();
+                MR.ShowDialog();
+            }
+            else
+            {
+                setDataTableAppoints(resultat);
+            }
+        }
+        private void setShadowBorder(Panel panel, int rayonBordure)
         {
             panel.BorderStyle = BorderStyle.None;
-            panel.Paint += (sender, e) =>
-            {
-                ControlPaint.DrawBorder(e.Graphics, panel.ClientRectangle,
-                    shadowColor, shadowSize, ButtonBorderStyle.Solid,
-                    shadowColor, shadowSize, ButtonBorderStyle.Solid,
-                    shadowColor, shadowSize, ButtonBorderStyle.Solid,
-                    shadowColor, shadowSize, ButtonBorderStyle.Solid);
-            };
-        }
-        private void AddPanelShadow(Panel panel)
-        {
-            panel.Padding = new Padding(10); // Augmente la marge intérieure du panel pour laisser de la place à l'ombre
 
-            panel.Paint += (sender, e) =>
-            {
-                using (var shadowBrush = new SolidBrush(Color.FromArgb(100, Color.Black)))
-                {
-                    var shadowRect = new Rectangle(
-                        panel.Location.X + panel.Width + 5, // Ajustez la position de l'ombre en fonction de vos préférences
-                        panel.Location.Y + 5, // Ajustez la position de l'ombre en fonction de vos préférences
-                        10, // Ajustez la largeur de l'ombre en fonction de vos préférences
-                        panel.Height - 10 // Ajustez la hauteur de l'ombre en fonction de vos préférences
-                    );
+            // Créer un panneau d'ombre
+            Panel ombrePanel = new Panel();
+            ombrePanel.BackColor = ColorTranslator.FromHtml("#2c2c2c");
+            ombrePanel.Location = new Point(panel.Location.X + 2, panel.Location.Y + 2);
+            ombrePanel.Size = panel.Size;
+            ombrePanel.Padding = new Padding(3);
+            ombrePanel.Margin = new Padding(-3);
 
-                    e.Graphics.FillRectangle(shadowBrush, shadowRect);
-                }
-            };
-        }
-        private void supprimer( string IdDelete)
-        {
-            connection = new DatabaseConnection("localhost", "rdvcomptable", "root", "");
-            connection.OpenConnection();
-            string queryDelete = "delete from rendezvous where rdv_id ='" + IdDelete+ "'";
-            cmd = new MySqlCommand(queryDelete, connection.GetConnection());
-            cmd.ExecuteNonQuery();
-            MainWindow.ListeRendezVous();
-            connection.CloseConnection();
+            // Appliquer le Border Radius à l'ombrePanel
+            System.Drawing.Drawing2D.GraphicsPath ombrePath = new System.Drawing.Drawing2D.GraphicsPath();
+            ombrePath.AddRectangle(new Rectangle(0, 0, ombrePanel.Width, ombrePanel.Height));
+            ombrePath.AddEllipse(rayonBordure, rayonBordure, ombrePanel.Width - (rayonBordure * 2), ombrePanel.Height - (rayonBordure * 2));
+            ombrePanel.Region = new System.Drawing.Region(ombrePath);
+
+            // Ajouter le panneau d'ombre derrière le panneau principal
+            panel.Parent.Controls.Add(ombrePanel);
+            panel.Parent.Controls.SetChildIndex(ombrePanel, panel.Parent.Controls.IndexOf(panel));
+
+            // Réorganiser les contrôles pour que le panneau principal soit au-dessus de l'ombre
+            panel.BringToFront();
         }
     }
 }
