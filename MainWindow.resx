@@ -117,6 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+<<<<<<< HEAD
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Gill Sans Ultra Bold, 12pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+=======
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -153,17 +164,26 @@
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Gill Sans Ultra Bold, 12pt</value>
   </data>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+<<<<<<< HEAD
+    <value>33, 25</value>
+=======
     <value>55, 21</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 23</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
+<<<<<<< HEAD
+    <value>0</value>
+=======
     <value>2</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>LET'S MEET</value>
@@ -180,6 +200,8 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+<<<<<<< HEAD
+=======
   <data name="pictureBox5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -207,6 +229,7 @@
   <data name="&gt;&gt;pictureBox5.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 0</value>
   </data>
@@ -226,7 +249,11 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+<<<<<<< HEAD
+    <value>0</value>
+=======
     <value>1</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>36, 79</value>
@@ -247,7 +274,11 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+<<<<<<< HEAD
+    <value>1</value>
+=======
     <value>2</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="ClientBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -283,7 +314,11 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;ClientBtn.ZOrder" xml:space="preserve">
+<<<<<<< HEAD
+    <value>2</value>
+=======
     <value>3</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="MyAppointBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -322,7 +357,11 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;MyAppointBtn.ZOrder" xml:space="preserve">
+<<<<<<< HEAD
+    <value>3</value>
+=======
     <value>4</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="TakeMeetingBtn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -361,7 +400,11 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;TakeMeetingBtn.ZOrder" xml:space="preserve">
+<<<<<<< HEAD
+    <value>4</value>
+=======
     <value>5</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, 0</value>
@@ -382,7 +425,32 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+<<<<<<< HEAD
+    <value>1</value>
+  </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>198, 148</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 20</value>
+  </data>
+  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
+    <value>textBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+    <value>TakeMeetingPage</value>
+  </data>
+  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+=======
     <value>2</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -412,7 +480,11 @@
     <value>TakeMeetingPage</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+<<<<<<< HEAD
+    <value>1</value>
+=======
     <value>0</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="TakeMeetingPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -421,7 +493,11 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TakeMeetingPage.Size" type="System.Drawing.Size, System.Drawing">
+<<<<<<< HEAD
+    <value>690, 531</value>
+=======
     <value>766, 519</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="TakeMeetingPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -441,6 +517,43 @@
   <data name="&gt;&gt;TakeMeetingPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+<<<<<<< HEAD
+  <data name="DataTableAppoints.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <metadata name="MeetWithTD.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="MeetWithTD.HeaderText" xml:space="preserve">
+    <value>Meet With</value>
+  </data>
+  <data name="MeetWithTD.Width" type="System.Int32, mscorlib">
+    <value>181</value>
+  </data>
+  <metadata name="Description.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Description.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Description.Width" type="System.Int32, mscorlib">
+    <value>182</value>
+  </data>
+  <metadata name="Time.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Time.HeaderText" xml:space="preserve">
+    <value>Times</value>
+  </data>
+  <data name="Time.Width" type="System.Int32, mscorlib">
+    <value>181</value>
+  </data>
+  <data name="DataTableAppoints.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 143</value>
+  </data>
+  <data name="DataTableAppoints.Size" type="System.Drawing.Size, System.Drawing">
+    <value>534, 248</value>
+=======
   <data name="pictureBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -746,6 +859,7 @@
   </data>
   <data name="DataTableAppoints.Size" type="System.Drawing.Size, System.Drawing">
     <value>657, 248</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="DataTableAppoints.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -760,16 +874,27 @@
     <value>MyAppointsPage</value>
   </data>
   <data name="&gt;&gt;DataTableAppoints.ZOrder" xml:space="preserve">
+<<<<<<< HEAD
+    <value>0</value>
+=======
     <value>3</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+<<<<<<< HEAD
+    <value>41, 3</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>618, 528</value>
+=======
     <value>213, -5</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>553, 528</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -787,7 +912,11 @@
     <value>MyAppointsPage</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+<<<<<<< HEAD
+    <value>1</value>
+=======
     <value>4</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="MyAppointsPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -796,7 +925,11 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="MyAppointsPage.Size" type="System.Drawing.Size, System.Drawing">
+<<<<<<< HEAD
+    <value>690, 531</value>
+=======
     <value>766, 529</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="MyAppointsPage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -816,6 +949,526 @@
   <data name="&gt;&gt;MyAppointsPage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+<<<<<<< HEAD
+  <data name="ClientPage.AccessibleDescription" xml:space="preserve">
+    <value>tableClient</value>
+  </data>
+  <data name="pictureBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 8</value>
+  </data>
+  <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 23</value>
+  </data>
+  <data name="pictureBox3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
+    <value>pictureBox3</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
+  </data>
+  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 22</value>
+  </data>
+  <data name="pictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 6</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 29</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="seach.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
+  </data>
+  <data name="seach.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 6</value>
+  </data>
+  <data name="seach.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="seach.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 29</value>
+  </data>
+  <data name="seach.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;seach.Name" xml:space="preserve">
+    <value>seach</value>
+  </data>
+  <data name="&gt;&gt;seach.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;seach.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;seach.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbl3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Baskerville Old Face, 15.75pt, style=Bold</value>
+  </data>
+  <data name="lbl3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 47</value>
+  </data>
+  <data name="lbl3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="lbl3.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lbl3.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="&gt;&gt;lbl3.Name" xml:space="preserve">
+    <value>lbl3</value>
+  </data>
+  <data name="&gt;&gt;lbl3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl3.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;lbl3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="email.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="email.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 71</value>
+  </data>
+  <data name="email.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="email.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="email.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 36</value>
+  </data>
+  <data name="email.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;email.Name" xml:space="preserve">
+    <value>email</value>
+  </data>
+  <data name="&gt;&gt;email.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;email.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;email.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Courier New, 15.75pt, style=Bold</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 271</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 23</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>LISTE DES CLIENTS</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListCliDataGrid.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="ListCliDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 309</value>
+  </data>
+  <data name="ListCliDataGrid.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="ListCliDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>641, 200</value>
+  </data>
+  <data name="ListCliDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;ListCliDataGrid.Name" xml:space="preserve">
+    <value>ListCliDataGrid</value>
+  </data>
+  <data name="&gt;&gt;ListCliDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ListCliDataGrid.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;ListCliDataGrid.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Baskerville Old Face, 12pt, style=Bold</value>
+  </data>
+  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>252, 214</value>
+  </data>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 34</value>
+  </data>
+  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Baskerville Old Face, 12pt, style=Bold</value>
+  </data>
+  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>436, 212</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 36</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Baskerville Old Face, 12pt, style=Bold</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 213</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 34</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lbl4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Baskerville Old Face, 15.75pt, style=Bold</value>
+  </data>
+  <data name="lbl4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 125</value>
+  </data>
+  <data name="lbl4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 24</value>
+  </data>
+  <data name="lbl4.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lbl4.Text" xml:space="preserve">
+    <value>Télephone</value>
+  </data>
+  <data name="&gt;&gt;lbl4.Name" xml:space="preserve">
+    <value>lbl4</value>
+  </data>
+  <data name="&gt;&gt;lbl4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl4.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;lbl4.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lbl2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Baskerville Old Face, 15.75pt, style=Bold</value>
+  </data>
+  <data name="lbl2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 125</value>
+  </data>
+  <data name="lbl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 24</value>
+  </data>
+  <data name="lbl2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lbl2.Text" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="&gt;&gt;lbl2.Name" xml:space="preserve">
+    <value>lbl2</value>
+  </data>
+  <data name="&gt;&gt;lbl2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl2.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;lbl2.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lbl1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Baskerville Old Face, 15.75pt, style=Bold</value>
+  </data>
+  <data name="lbl1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 47</value>
+  </data>
+  <data name="lbl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 24</value>
+  </data>
+  <data name="lbl1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lbl1.Text" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="&gt;&gt;lbl1.Name" xml:space="preserve">
+    <value>lbl1</value>
+  </data>
+  <data name="&gt;&gt;lbl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl1.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;lbl1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="prenom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="prenom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 151</value>
+  </data>
+  <data name="prenom.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="prenom.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="prenom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 35</value>
+  </data>
+  <data name="prenom.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;prenom.Name" xml:space="preserve">
+    <value>prenom</value>
+  </data>
+  <data name="&gt;&gt;prenom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;prenom.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;prenom.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="tel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="tel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 150</value>
+  </data>
+  <data name="tel.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tel.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="tel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 35</value>
+  </data>
+  <data name="tel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tel.Name" xml:space="preserve">
+    <value>tel</value>
+  </data>
+  <data name="&gt;&gt;tel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tel.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;tel.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="nom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="nom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 73</value>
+  </data>
+  <data name="nom.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="nom.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="nom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 34</value>
+  </data>
+  <data name="nom.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;nom.Name" xml:space="preserve">
+    <value>nom</value>
+  </data>
+  <data name="&gt;&gt;nom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nom.Parent" xml:space="preserve">
+    <value>ClientPage</value>
+  </data>
+  <data name="&gt;&gt;nom.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ClientPage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt, style=Bold</value>
+=======
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -845,6 +1498,7 @@
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>0</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="ClientPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -852,14 +1506,26 @@
   <data name="ClientPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
+<<<<<<< HEAD
+  <data name="ClientPage.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="ClientPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>690, 531</value>
+=======
   <data name="ClientPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>766, 519</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="ClientPage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="ClientPage.Text" xml:space="preserve">
+<<<<<<< HEAD
+    <value> </value>
+=======
     <value>ClientPage</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="&gt;&gt;ClientPage.Name" xml:space="preserve">
     <value>ClientPage</value>
@@ -874,10 +1540,17 @@
     <value>2</value>
   </data>
   <data name="TabController.Location" type="System.Drawing.Point, System.Drawing">
+<<<<<<< HEAD
+    <value>194, 0</value>
+  </data>
+  <data name="TabController.Size" type="System.Drawing.Size, System.Drawing">
+    <value>698, 557</value>
+=======
     <value>194, 12</value>
   </data>
   <data name="TabController.Size" type="System.Drawing.Size, System.Drawing">
     <value>774, 555</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="TabController.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -892,6 +1565,8 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabController.ZOrder" xml:space="preserve">
+<<<<<<< HEAD
+=======
     <value>1</value>
   </data>
   <data name="pictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -937,6 +1612,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -946,7 +1622,11 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+<<<<<<< HEAD
+    <value>888, 556</value>
+=======
     <value>969, 556</value>
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -954,6 +1634,27 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Form1</value>
   </data>
+<<<<<<< HEAD
+  <data name="&gt;&gt;MeetWithTD.Name" xml:space="preserve">
+    <value>MeetWithTD</value>
+  </data>
+  <data name="&gt;&gt;MeetWithTD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Description.Name" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="&gt;&gt;Description.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Time.Name" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="&gt;&gt;Time.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+=======
+>>>>>>> c414ad4a07f066e3f4b5576cbd85cd3b3943a97d
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
   </data>
